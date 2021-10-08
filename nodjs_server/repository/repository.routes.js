@@ -19,16 +19,16 @@ module.exports = function (router) {
     const query2Repository = _queryRepository(dbContext);
 
     router.route('/query2')
-        .get(query2Repository.getAll)
-        .post(query2Repository.post);
+        .get(query2Repository.getAll);
+        //.post(query2Repository.post);
         
     
     router.use('/query2/id/:CODE', query2Repository.intercept);
 
     router.route('/query2/id/:CODE')
-        .get(query2Repository.get)
-        .put(query2Repository.put)
-        .delete(query2Repository.delete);
+        .get(query2Repository.get);
+        //.put(query2Repository.put)
+        //.delete(query2Repository.delete);
         
     //PROC---------------------------------------------
     const procRepository = _procRepository(dbContext);
